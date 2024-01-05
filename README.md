@@ -1,4 +1,4 @@
-# CSC 305 - Introduction to Computer Graphics - Spring 2023
+# CSC 305 - Introduction to Computer Graphics - Spring 2024
 
 ### Course Instructor
 *Teseo Schneider*
