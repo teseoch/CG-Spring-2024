@@ -87,14 +87,30 @@ std::vector<Vector2d> load_obj(const std::string &filename)
 
 int main(int argc, char *argv[])
 {
+
+    Matrix3f A;
+    Vector3f b;
+    A << 5, 3, -7, -3, 5, 12, 9, -2, -2;
+    b << 4, 9, -3;
+    std::cout << "Here is the matrix A:\n"
+              << A << std::endl;
+    std::cout << "Here is the vector b:\n"
+              << b << std::endl;
+    Vector3f x = A.colPivHouseholderQr().solve(b);
+    std::cout << "The solution is:\n"
+              << x << std::endl;
+
     const std::string points_path = root_path + "/points.xyz";
     const std::string poly_path = root_path + "/polygon.obj";
 
     std::vector<Vector2d> points = load_xyz(points_path);
+    std::cout << "inside " << std::endl;
+    printf("asf\n");
 
     ////////////////////////////////////////////////////////////////////////////////
     //Point in polygon
-    std::vector<Vector2d> poly = load_obj(poly_path);
+    std::vector<Vector2d>
+        poly = load_obj(poly_path);
     std::vector<Vector2d> result;
     for (size_t i = 0; i < points.size(); ++i)
     {
